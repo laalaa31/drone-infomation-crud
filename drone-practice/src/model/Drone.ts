@@ -11,6 +11,9 @@ const DroneSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  video_capture: {
+    type: String,
+  },
   armed: {
     type: Boolean,
     default: false, //시동 걸리지 않은 상태가 default
