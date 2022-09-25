@@ -4,8 +4,11 @@ import { DroneResponseDto } from '../DTO/DroneResponseDto';
 import { DroneUpdateDto } from '../DTO/DroneUpdateDto';
 import Drone from '../model/Drone';
 
-//CREATE
-//드론 정보 생성 서비스 모듈
+/**
+ *  @route POST /drone
+ *  @desc Create drone information
+ *  @access Public
+ */
 const createDroneInfo = async (
   dronecreateDto: DroneCreateDto
 ): Promise<mongoose.Schema.Types.ObjectId> => {
@@ -29,8 +32,11 @@ const createDroneInfo = async (
   }
 };
 
-//READ
-//드론 정보 조회 서비스 모듈
+/**
+ *  @route GET /drone/:id
+ *  @desc Read drone information
+ *  @access Public
+ */
 const readDroneInfo = async (id: string): Promise<DroneResponseDto | null> => {
   try {
     const droneinfo = await Drone.findById(id);
@@ -43,8 +49,11 @@ const readDroneInfo = async (id: string): Promise<DroneResponseDto | null> => {
   }
 };
 
-//UPDATE
-//드론 정보 조회 서비스 모듈
+/**
+ *  @route PUT /drone/:id
+ *  @desc Update drone information
+ *  @access Public
+ */
 const updateDroneInfo = async (id: string, droneupdateDto: DroneUpdateDto) => {
   try {
     await Drone.findByIdAndUpdate(id, droneupdateDto);
@@ -54,8 +63,11 @@ const updateDroneInfo = async (id: string, droneupdateDto: DroneUpdateDto) => {
   }
 };
 
-//DELETE
-//드론 정보 삭제 서비스 모듈
+/**
+ *  @route DELETE /drone/:id
+ *  @desc Delete drone information
+ *  @access Public
+ */
 const deleteDroneInfo = async (id: string) => {
   try {
     await Drone.findByIdAndDelete(id);

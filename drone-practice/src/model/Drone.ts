@@ -13,6 +13,7 @@ const DroneSchema = new mongoose.Schema({
   },
   videoCapture: {
     type: String,
+    default: null,
   },
   armed: {
     type: Boolean,
