@@ -1,15 +1,17 @@
 const util = {
-    success: (message: string, data?: any) => {
-        return {
-            message,
-            data,
-        };
-    },
-    fail: (message: string, data?: any) => {
-        return {
-            message,
-        };
-    },
+  success: (status: number, message: string, data?: any) => {
+    return {
+      status,
+      message,
+      data,
+    };
+  },
+  fail: (status: number, message: string, data?: any) => {
+    return {
+      status,
+      message,
+    };
+  },
 };
 
 export default util;
