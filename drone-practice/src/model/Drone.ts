@@ -2,16 +2,16 @@ import mongoose from 'mongoose';
 import { DroneInfo } from '../interfaces/DroneInfo';
 
 const DroneSchema = new mongoose.Schema({
-  drone_name: {
+  droneName: {
     type: String,
     required: true,
   },
-  drone_video: {
+  droneVideo: {
     //url로 받으면 String
     type: String,
     required: true,
   },
-  video_capture: {
+  videoCapture: {
     type: String,
   },
   armed: {
@@ -22,15 +22,15 @@ const DroneSchema = new mongoose.Schema({
     type: Number,
     default: 0.0,
   },
-  groundspeed: {
+  groundSpeed: {
     type: Number,
     default: 0.0,
   },
-  verticalspeed: {
+  verticalSpeed: {
     type: Number,
     default: 0.0,
   },
-  disttowp: {
+  distToWp: {
     type: Number,
     default: 0.0,
   },

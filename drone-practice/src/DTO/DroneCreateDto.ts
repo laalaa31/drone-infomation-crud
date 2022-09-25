@@ -1,10 +1,10 @@
 export interface DroneCreateDto {
-    drone_name: string;
-    drone_video: string;
-    armed?: boolean;
-    altitude?: number;
-    groundspeed?: number;
-    verticalspeed?: number;
-    disttowp?: number;
-    yaw?: number;
+  droneName: string;
+  droneVideo: string;
+  armed?: boolean;
+  altitude?: number;
+  groundSpeed?: number;
+  verticalSpeed?: number;
+  distToWp?: number;
+  yaw?: number;
 }

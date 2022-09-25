@@ -1,11 +1,11 @@
 export interface DroneInfo {
-  drone_name: string;
-  drone_video: string;
-  vedio_capture: string;
+  droneName: string;
+  droneVideo: string;
+  vedioCapture: string;
   armed: boolean;
   altitude: number;
-  groundspeed: number;
-  verticalspeed: number;
-  disttowp: number;
+  groundSpeed: number;
+  verticalSpeed: number;
+  distToWp: number;
   yaw: number;
 }
