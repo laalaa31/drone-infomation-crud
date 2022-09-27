@@ -1,7 +1,9 @@
+import mongoose from 'mongoose';
+
 export interface DroneInfo {
   droneName: string;
   droneVideo: string;
-  vedioCapture: string;
+  vedioCapture: mongoose.Types.ObjectId[];
   armed: boolean;
   altitude: number;
   groundSpeed: number;
