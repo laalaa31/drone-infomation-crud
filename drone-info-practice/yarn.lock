@@ -110,7 +110,7 @@
   dependencies:
     tslib "^2.3.1"
 
-"@aws-sdk/client-s3@^3.0.0":
+"@aws-sdk/client-s3@^3.0.0", "@aws-sdk/client-s3@^3.179.0":
   version "3.179.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-s3/-/client-s3-3.179.0.tgz#a9e1c9365b49c787b8a15418799c0ca839c8fe7b"
   integrity sha512-H+H3xW7QHuoKHaktqKWVAzRTSzDOVouIS28Smmt4K62B42n3gbJ62inP9fuwNIV3J90ypui3Wtb+fPn2ddO3VQ==
