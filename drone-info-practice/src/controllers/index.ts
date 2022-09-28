@@ -1,6 +1,4 @@
-import DroneController from "./DroneController"
-// controller index file
+import DroneController from './DroneController';
+import ImageController from './ImageController';
 
-export {
-    DroneController
-}
+export { DroneController, ImageController };
