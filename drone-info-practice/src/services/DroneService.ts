@@ -7,54 +7,34 @@ import Drone from '../model/Drone';
 const createDroneInfo = async (
   dronecreateDto: DroneCreateDto
 ): Promise<mongoose.Schema.Types.ObjectId> => {
-  try {
-    const droneinfo = new Drone({
-      droneName: dronecreateDto.droneName,
-      droneVideo: dronecreateDto.droneVideo,
-      armed: dronecreateDto.armed,
-      altitude: dronecreateDto.altitude,
-      groundSpeed: dronecreateDto.groundSpeed,
-      verticalSpeed: dronecreateDto.verticalSpeed,
-      distToWp: dronecreateDto.distToWp,
-      yaw: dronecreateDto.yaw,
-    });
-    await droneinfo.save();
+  const droneinfo = new Drone({
+    droneName: dronecreateDto.droneName,
+    droneVideo: dronecreateDto.droneVideo,
+    armed: dronecreateDto.armed,
+    altitude: dronecreateDto.altitude,
+    groundSpeed: dronecreateDto.groundSpeed,
+    verticalSpeed: dronecreateDto.verticalSpeed,
+    distToWp: dronecreateDto.distToWp,
+    yaw: dronecreateDto.yaw,
+  });
+  await droneinfo.save();
 
-    return droneinfo.id;
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+  return droneinfo.id;
 };
 
 const readDroneInfo = async (id: string): Promise<DroneResponseDto | null> => {
-  try {
-    const droneinfo = await Drone.findById(id);
-    if (!droneinfo) return null;
+  const droneinfo = await Drone.findById(id);
+  if (!droneinfo) return null;
 
-    return droneinfo;
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+  return droneinfo;
 };
 
 const updateDroneInfo = async (id: string, droneupdateDto: DroneUpdateDto) => {
-  try {
-    await Drone.findByIdAndUpdate(id, droneupdateDto);
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+  await Drone.findByIdAndUpdate(id, droneupdateDto);
 };
 
 const deleteDroneInfo = async (id: string) => {
-  try {
-    await Drone.findByIdAndDelete(id);
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+  await Drone.findByIdAndDelete(id);
 };
 
 export default {
