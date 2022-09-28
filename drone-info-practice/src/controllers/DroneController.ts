@@ -5,9 +5,11 @@ import statusCode from '../modules/statusCode';
 import util from '../modules/util';
 import DroneService from '../services/DroneService';
 
-//CREATE
-//드론정보 생성(POST/drone)
-
+/**
+ *  @route POST /drone
+ *  @desc Create drone information
+ *  @access Public
+ */
 const createDroneInfo = async (req: Request, res: Response) => {
   try {
     const data = await DroneService.createDroneInfo(req.body);
@@ -24,9 +26,11 @@ const createDroneInfo = async (req: Request, res: Response) => {
   }
 };
 
-//READ
-//드론정보 조회(GET /drone/:id)
-
+/**
+ *  @route GET /drone/:id
+ *  @desc Read drone information
+ *  @access Public
+ */
 const readDroneInfo = async (req: Request, res: Response) => {
   const { id } = req.params;
 
@@ -48,8 +52,11 @@ const readDroneInfo = async (req: Request, res: Response) => {
   }
 };
 
-//READ
-//드론정보 업데이트(PUT /drone/:id)
+/**
+ *  @route PUT /drone/:id
+ *  @desc Update drone information
+ *  @access Public
+ */
 const updateDroneInfo = async (req: Request, res: Response) => {
   const droneupdateDto: DroneUpdateDto = req.body;
   const { id } = req.params;
@@ -67,8 +74,11 @@ const updateDroneInfo = async (req: Request, res: Response) => {
   }
 };
 
-//DELETE
-//드론정보 삭제(DELETE /drone/:id)
+/**
+ *  @route DELETE /drone/:id
+ *  @desc Delete drone information
+ *  @access Public
+ */
 const deleteDroneInfo = async (req: Request, res: Response) => {
   const { id } = req.params;
 

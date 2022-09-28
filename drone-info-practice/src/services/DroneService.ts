@@ -4,11 +4,6 @@ import { DroneResponseDto } from '../DTO/DroneResponseDto';
 import { DroneUpdateDto } from '../DTO/DroneUpdateDto';
 import Drone from '../model/Drone';
 
-/**
- *  @route POST /drone
- *  @desc Create drone information
- *  @access Public
- */
 const createDroneInfo = async (
   dronecreateDto: DroneCreateDto
 ): Promise<mongoose.Schema.Types.ObjectId> => {
@@ -32,11 +27,6 @@ const createDroneInfo = async (
   }
 };
 
-/**
- *  @route GET /drone/:id
- *  @desc Read drone information
- *  @access Public
- */
 const readDroneInfo = async (id: string): Promise<DroneResponseDto | null> => {
   try {
     const droneinfo = await Drone.findById(id);
@@ -49,11 +39,6 @@ const readDroneInfo = async (id: string): Promise<DroneResponseDto | null> => {
   }
 };
 
-/**
- *  @route PUT /drone/:id
- *  @desc Update drone information
- *  @access Public
- */
 const updateDroneInfo = async (id: string, droneupdateDto: DroneUpdateDto) => {
   try {
     await Drone.findByIdAndUpdate(id, droneupdateDto);
@@ -63,11 +48,6 @@ const updateDroneInfo = async (id: string, droneupdateDto: DroneUpdateDto) => {
   }
 };
 
-/**
- *  @route DELETE /drone/:id
- *  @desc Delete drone information
- *  @access Public
- */
 const deleteDroneInfo = async (id: string) => {
   try {
     await Drone.findByIdAndDelete(id);
