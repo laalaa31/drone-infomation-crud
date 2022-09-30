@@ -8,7 +8,7 @@ import util from '../modules/util';
  *  @desc Upload image
  *  @access Public
  */
-const uploadImage = async (req: Request, res: Response) => {
+const createImage = async (req: Request, res: Response) => {
   if (!req.file)
     return res
       .status(statusCode.BAD_REQUEST)
@@ -32,5 +32,5 @@ const uploadImage = async (req: Request, res: Response) => {
 };
 
 export default {
-  uploadImage,
+  createImage,
 };

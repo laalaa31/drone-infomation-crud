@@ -5,6 +5,6 @@ import upload from '../middlewares/multer';
 const router: Router = Router();
 
 //UPLOAD IMAGE
-router.post('/', upload.single('image'), ImageController.uploadImage);
+router.post('/', upload.single('image'), ImageController.createImage);
 
 export default router;
