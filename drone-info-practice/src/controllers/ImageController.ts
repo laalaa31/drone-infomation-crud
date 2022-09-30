@@ -16,9 +16,12 @@ const createImage = async (req: Request, res: Response) => {
       .send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE));
 
   const image: Express.MulterS3.File = req.file as Express.MulterS3.File;
-  const { originalname, location } = image;
+
   try {
-    const data = await ImageService.createImage(originalname, location);
+    const data = await ImageService.createImage(
+      image.originalname,
+      image.location
+    );
     res
       .status(statusCode.CREATED)
       .send(

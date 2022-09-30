@@ -2,8 +2,8 @@ import { ImageResponseDto } from '../dtos/ImageDto';
 import Image from '../models/Image';
 
 const createImage = async (
-  link: string,
-  imageName: string
+  imageName: string,
+  link: string
 ): Promise<ImageResponseDto> => {
   const image = new Image({
     link,
