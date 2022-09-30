@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import message from '../modules/responseMessage';
 import statusCode from '../modules/statusCode';
 import util from '../modules/util';
+import { ImageService } from '../services';
 
 /**
  *  @route POST /image
@@ -21,7 +22,7 @@ const createImage = async (req: Request, res: Response) => {
     res
       .status(statusCode.CREATED)
       .send(
-        util.success(statusCode.CREATED, message.CREATE_DRONEINFO_SUCCESS, data)
+        util.success(statusCode.CREATED, message.CREATE_IMAGE_SUCCESS, data)
       );
   } catch (error) {
     console.log(error);
