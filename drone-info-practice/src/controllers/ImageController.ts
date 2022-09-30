@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import message from '../modules/responseMessage';
 import statusCode from '../modules/statusCode';
 import util from '../modules/util';
+
 /**
  *  @route POST /image
  *  @desc Upload image
