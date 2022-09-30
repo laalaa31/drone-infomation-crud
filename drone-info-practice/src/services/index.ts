@@ -1,5 +1,4 @@
 //service index file
-import DroneService from "./DroneService"
-export {
-    DroneService
-}
+import DroneService from './DroneService';
+import ImageService from './ImageService';
+export { DroneService, ImageService };
