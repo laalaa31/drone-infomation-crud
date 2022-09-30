@@ -4,7 +4,7 @@ import {
   DroneResponseDto,
   DroneUpdateDto,
 } from '../dtos/DroneDto';
-import Drone from '../model/Drone';
+import Drone from '../models/Drone';
 
 const createDroneInfo = async (
   dronecreateDto: DroneCreateDto

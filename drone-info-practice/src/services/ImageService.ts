@@ -1,5 +1,5 @@
 import { ImageResponseDto } from '../dtos/ImageDto';
-import Image from '../model/Image';
+import Image from '../models/Image';
 
 const createImage = async (
   link: string,
