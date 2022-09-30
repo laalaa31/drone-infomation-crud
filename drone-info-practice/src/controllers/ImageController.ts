@@ -1,10 +1,7 @@
 import express, { Request, Response } from 'express';
-import { DroneUpdateDto } from '../DTO/DroneUpdateDto';
 import message from '../modules/responseMessage';
 import statusCode from '../modules/statusCode';
 import util from '../modules/util';
-import DroneService from '../services/DroneService';
-
 /**
  *  @route POST /image
  *  @desc Upload image

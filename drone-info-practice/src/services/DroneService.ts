@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
-import { DroneCreateDto } from '../DTO/DroneCreateDto';
-import { DroneResponseDto } from '../DTO/DroneResponseDto';
-import { DroneUpdateDto } from '../DTO/DroneUpdateDto';
+import {
+  DroneCreateDto,
+  DroneResponseDto,
+  DroneUpdateDto,
+} from '../dtos/DroneDto';
 import Drone from '../model/Drone';
 
 const createDroneInfo = async (
