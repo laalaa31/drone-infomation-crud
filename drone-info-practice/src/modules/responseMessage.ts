@@ -12,6 +12,7 @@ const message = {
 
   //이미지
   CREATE_IMAGE_SUCCESS: '이미지 파일 생성 성공',
+  CREATE_IMAGES_SUCCESS: '이미지 파일 다중 생성 성공',
 };
 
 export default message;
