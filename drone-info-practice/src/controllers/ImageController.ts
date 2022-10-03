@@ -36,17 +36,17 @@ const createImage = async (req: Request, res: Response) => {
 };
 
 /**
- *  @route POST /image
+ *  @route POST /images
  *  @desc Upload images
  *  @access Public
  */
 const createImages = async (req: Request, res: Response) => {
-  if (!req.file)
+  if (!req.files)
     return res
       .status(statusCode.BAD_REQUEST)
       .send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE));
 
-  const images: Express.MulterS3.File[] = req.file as Express.MulterS3.File[];
+  const images: Express.MulterS3.File[] = req.files as Express.MulterS3.File[];
 
   try {
     const imageList: {
@@ -65,7 +65,7 @@ const createImages = async (req: Request, res: Response) => {
     res
       .status(statusCode.CREATED)
       .send(
-        util.success(statusCode.CREATED, message.CREATE_IMAGE_SUCCESS, data)
+        util.success(statusCode.CREATED, message.CREATE_IMAGES_SUCCESS, data)
       );
   } catch (error) {
     console.log(error);
