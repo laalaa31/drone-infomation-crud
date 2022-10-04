@@ -1,7 +1,9 @@
 import { ImageResponseDto } from '../dtos/ImageDto';
+import Drone from '../models/Drone';
 import Image from '../models/Image';
 
 const createImages = async (
+  droneId: string,
   imageList: {
     location: string;
     originalname: string;
@@ -13,8 +15,11 @@ const createImages = async (
         link: singleImage.location,
         imageName: singleImage.originalname,
       });
-
       await image.save();
+
+      await Drone.findByIdAndUpdate(droneId, {
+        $push: { videoCapture: image._id },
+      });
 
       return {
         _id: image._id,
