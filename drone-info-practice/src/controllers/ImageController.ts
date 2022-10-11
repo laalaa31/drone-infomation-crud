@@ -45,6 +45,30 @@ const createImages = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ *  @route DELETE /images
+ *  @desc Upload images
+ *  @access Public
+ */
+const deleteImage = async (req: Request, res: Response) => {
+  const imageId: string = req.params.imageid;
+
+  try {
+    const data = await ImageService.deleteImage(imageId);
+    res
+      .status(statusCode.CREATED)
+      .send(
+        util.success(statusCode.CREATED, message.DELETE_IMAGE_SUCCESS, data)
+      );
+  } catch (error) {
+    console.log(error);
+    res
+      .status(statusCode.INTERNAL_SERVER_ERROR)
+      .send(util.fail(statusCode.INTERNAL_SERVER_ERROR, message.SERVER_ERROR));
+  }
+};
+
 export default {
   createImages,
+  deleteImage,
 };

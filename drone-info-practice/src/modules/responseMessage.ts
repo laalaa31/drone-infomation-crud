@@ -11,8 +11,8 @@ const message = {
   UPDATE_DRONEINFO_SUCCESS: '드론 정보 갱신 성공',
 
   //이미지
-  CREATE_IMAGE_SUCCESS: '이미지 파일 생성 성공',
   CREATE_IMAGES_SUCCESS: '이미지 파일 다중 생성 성공',
+  DELETE_IMAGE_SUCCESS: '이미지 파일 삭제 성공',
 };
 
 export default message;
