@@ -46,8 +46,8 @@ const createImages = async (req: Request, res: Response) => {
 };
 
 /**
- *  @route DELETE /images
- *  @desc Upload images
+ *  @route DELETE /image
+ *  @desc Delete image
  *  @access Public
  */
 const deleteImage = async (req: Request, res: Response) => {
